@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Atividade 8 - RA e Nome</title>
+   
+	<script>
+
+		
+			var Aluno = new Object();
+			Aluno.RA = "0030481821010";
+			Aluno.Nome = "Fulano do Silva";
+			
+			alert("RA: " + Aluno.RA + "      Nome do Aluno 1: " + Aluno.Nome);
+			
+			
+			
+			var Aluno =  {}
+			Aluno.RA = "0030481821011";
+			Aluno.Nome = "Pedro Santos";
+			
+			alert("RA: " + Aluno.RA + "      Nome do Aluno 2: " + Aluno.Nome);
+			
+	</script>
+</head>
+  
+   <body>
+		<script>
+
+		function Aluno(RA, Nome)
+		{
+			this.RA = RA;
+			this.Nome = Nome;
+
+		};
+		
+		function displayAluno() 
+		{
+			var result = "RA: " + this.RA + "      Nome do Aluno 3: " + this.Nome;
+			alert(result);
+		}
+		
+		var Alu = new Aluno("0030481821012", "Sicrano da Silva");
+		Alu.displayAluno = displayAluno;
+
+		Alu.displayAluno();
+			
+		</script>
+    </body>
+     
+</html>

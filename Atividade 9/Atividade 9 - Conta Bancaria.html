@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Atividade 9 - Conta Bancaria</title>
+</head>
+
+<body>
+    <script>
+        function Conta() 
+		{ 	// “superclasse”
+            var nomeCorrentista;
+			var banco;
+			var numeroConta;
+			var saldo;
+			
+			
+            this.getNomeCorrentista = function () 
+			{
+                return nomeCorrentista;
+            };
+			
+			this.getBanco = function () 
+			{
+                return banco;
+            };
+			
+			this.getNumeroConta = function () 
+			{
+                return numeroConta;
+            };
+			
+			this.getSaldo = function () 
+			{
+                return saldo;
+            };
+			
+			
+			
+            this.setNomeCorrentista = function (value) 
+			{
+                nomeCorrentista = value;
+            };
+			
+			this.setBanco = function (value) 
+			{
+                banco = value;
+            };
+			
+			this.setNumeroConta = function (value) 
+			{
+                numeroConta = value;
+            };
+			
+			this.setSaldo = function (value) 
+			{
+                saldo = value;
+            };
+        }
+
+		
+        function Corrente() 
+		{ 	// “subclasse”
+            var saldoEspecial;
+			
+            this.getSaldoEspecial = function () 
+			{
+                return saldoEspecial;
+            };
+			
+            this.setSaldoEspecial = function (value) 
+			{
+                saldoEspecial = value;
+            };
+        }
+
+		
+        function Poupanca() 
+		{ 	// “subclasse”
+            
+			var juros;
+			var dataVencimento
+			
+            this.getJuros = function () 
+			{
+                return juros;
+            };
+			
+			this.getDataVencimento = function () 
+			{
+                return dataVencimento;
+            };
+			
+			
+			
+            this.setJuros = function (value)
+			{
+                juros = value;
+            };
+			
+			this.setDataVencimento = function (value)
+			{
+                dataVencimento = value;
+            };
+        }
+
+        //  herança	           
+        Corrente.prototype = new Conta();
+        Poupanca.prototype = new Conta();
+
+        //>>>> Criando novo objeto <<<<<<
+        nContaCorrente = new Corrente();
+        nContaPoupanca = new Poupanca();
+		
+        nContaCorrente.setNomeCorrentista('Fulano da Silva');
+        nContaCorrente.setBanco('Itau');
+		nContaCorrente.setNumeroConta('1010');
+		nContaCorrente.setSaldo('4500');
+		nContaCorrente.setSaldoEspecial("1000");
+		
+		nContaPoupanca.setNomeCorrentista('Sicrano da Silva');
+        nContaPoupanca.setBanco('Bradesco');
+		nContaPoupanca.setNumeroConta('2020');
+		nContaPoupanca.setSaldo('8700');
+        nContaPoupanca.setJuros('20%');
+        nContaPoupanca.setDataVencimento('20/01/2030');
+
+        alert("\n" + nContaCorrente.getNomeCorrentista() + '\n' + nContaCorrente.getBanco() + '\n' + nContaCorrente.getNumeroConta() + '\n' + nContaCorrente.getSaldo() + '\n' + nContaCorrente.getSaldoEspecial());
+		alert("\n" + nContaPoupanca.getNomeCorrentista() + '\n' + nContaPoupanca.getBanco() + '\n' + nContaPoupanca.getNumeroConta() + '\n' + nContaPoupanca.getSaldo() + '\n'+ nContaPoupanca.getJuros() + "\n" +  nContaPoupanca.getDataVencimento());
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	</script>
+</body>
+
+</html>

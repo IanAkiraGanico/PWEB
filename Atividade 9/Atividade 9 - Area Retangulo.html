@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Atividade 9 - Area Retangulo</title>
+</head>
+
+<body>
+    <script>
+		function Retangulo(alt, lar)
+		{
+			this.alt = alt;
+			this.lar = lar;
+			
+			this.getArea = function() 	
+			{
+				return this.alt * this.lar;
+			}
+			
+		}
+		
+		
+	altura = parseFloat(prompt("Digite a altura:"));
+	largura = parseFloat(prompt("Digite a largura:"));
+		
+	var ret = new Retangulo(altura, largura);
+	alert("O valor da área é " + ret.getArea());
+
+    </script>
+
+</body>
+
+</html>
